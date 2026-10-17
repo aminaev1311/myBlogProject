@@ -1,0 +1,70 @@
+body {
+  /* background-color: lightblue; */
+}
+
+.container {
+  /* width: 75%;
+  margin: 0 auto;
+  height: 100vh; */
+}
+
+.post {
+  border: 1px solid darkblue;
+  border-radius: 5px;
+  padding: 12px;
+  margin-bottom: 1rem;
+  background-color: lightblue;
+}
+
+form {
+  display: inline;
+}
+
+p,
+h1,
+h2,
+h3 {
+  display: block;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+button,
+input[type="submit"] {
+  border-radius: 5px;
+  background-color: darkblue;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin-right: 10px;
+  width: 5rem;
+}
+
+button[action="delete"] {
+  background: lightcoral;
+}
+
+input[action="cancel"],
+button[action="cancel"] {
+  background: lightseagreen;
+}
+
+.buttons {
+  margin-top: 2rem;
+}
+
+nav {
+  margin-bottom: 1rem;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0px;
+}

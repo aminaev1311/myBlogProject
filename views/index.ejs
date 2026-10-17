@@ -1,0 +1,28 @@
+<%- include('partials/header.ejs') %>
+
+  <main>
+    <div class="container">
+      <% if (locals.posts?.length !== 0 ) { %>
+        <% for( const post of locals.posts ) { %>
+          <div class="post" post_id="<%= post.id %>">
+            <h1><%= post.title.toUpperCase() %></h1>
+            <p>posted on: <%- new Date().toISOString().slice(0, 16).replace('T', ' ') %></p>
+            <p>post id: <%= post.id %></p>
+            <h3><%= post.content %></h3>
+            <div class="buttons">
+              <form action="/put" method="post">
+                <button type="submit" name="post_id" value="<%= post.id %>" action="edit">Edit</button>
+              </form>
+              <form action="/delete" method="post">
+                <button type="submit" name="post_id" value="<%= post.id %>" action="delete">Delete</button>
+              </form>
+            </div> 
+          </div> 
+        <% } %> 
+      <% } else { %>
+        <h1>No posts!</h1>
+      <% } %>
+    </div>
+  </main>
+
+<%- include('partials/footer.ejs') %>

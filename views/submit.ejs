@@ -1,0 +1,35 @@
+<%- include('partials/header.ejs') %>
+
+<main>
+  <div class="container">
+    <h1>Publish a new blog post</h1>
+    <form action="/submit" method="post">
+      <div class="field">
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Blog title"
+          value="<%= locals.title %>"
+        />
+      </div>
+      <div class="field">
+        <textarea
+          name="content"
+          id="content"
+          placeholder="Post content"
+          cols="30"
+          rows="10"
+        >
+<%= locals.content %></textarea
+        >
+      </div>
+      <input type="submit" value="Publish" action="publish" />
+    </form>
+    <form action="/" method="get">
+      <input type="submit" value="Cancel" action="cancel" />
+    </form>
+  </div>
+</main>
+
+<%- include('partials/footer.ejs') %>

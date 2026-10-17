@@ -1,0 +1,38 @@
+<%- include('partials/header.ejs') %>
+
+  <main>
+    <div class="container">
+      <h1>Edit a blog post</h1>
+
+      <p>Post id:<%= locals.id %></p>
+      <form action="/submit" method="post">
+        <div class="field">
+          <input type="hidden" name="post_id" value="<%= locals.id %>" />
+          <input
+            type="text"
+            name="title"
+            id="title"
+            placeholder="Blog title"
+            value="<%= locals.title %>"
+          />
+        </div>
+        <div class="field">
+          <textarea
+            name="content"
+            id="content"
+            placeholder="Post content"
+            cols="30"
+            rows="10"
+          >
+<%= locals.content %></textarea
+          >
+        </div>
+        <input type="submit" value="Publish" />
+      </form>
+      <form action="/" method="get">
+        <input type="submit" value="Cancel" action="cancel" />
+      </form>
+    </div>
+  </main>
+
+<%- include('partials/footer.ejs') %>
